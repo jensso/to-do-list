@@ -42,7 +42,7 @@ class TaskPlanner extends React.Component {
   render() {
       return (
       <React.Fragment>
-      <div><h2>Have your ToDo's scheduled</h2></div>
+      <div><h2>Have your To-Do-List scheduled</h2></div>
       <div id="TaskPlanner">
         <form onSubmit={this.handleSubmit.bind(this)}>
           <input type="text" placeholder="write something you want to achieve"
@@ -67,7 +67,6 @@ class TaskInput extends React.Component {
     };
   }
   handleSetDone(ev) {
-
     this.state.textDeco === '' ?
     this.setState({
       textDeco: ev.target.parentNode.style.textDecoration='line-through',
@@ -83,7 +82,6 @@ class TaskInput extends React.Component {
     this.setState({});
     let posInArr = (ev.target.parentElement.firstChild.innerText)-1;
     posInArr = Number(posInArr);
-    console.log(typeof posInArr);
     this.props.newTask.splice(posInArr, 1);
 }
   render() {
